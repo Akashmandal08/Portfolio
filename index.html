@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akash Mandal - AI & Data Science Engineer, Published Machine Learning Researcher, and LLM Post-Training Specialist. B.Tech CSE (AI & DS) Student.">
+  <meta name="keywords" content="Akash Mandal, Portfolio, AI Engineer, Machine Learning, Data Science, PredictiX, Ethara AI, JETIR Publication, Python Developer">
+  <meta name="author" content="Akash Mandal">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Akash Mandal | AI & Data Science Portfolio">
+  <meta property="og:description" content="Explore published research, ML projects, LLM post-training internship experience, and technical achievements of Akash Mandal.">
+  <meta property="og:type" content="website">
+
+  <title>Akash Mandal | AI & Data Science Engineer</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Top Scroll Reading Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Ambient Cursor Follower -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Ambient Particle Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Glassmorphic Header & Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-icon">AM</div>
+        <span>Akash Mandal</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="btn btn-primary btn-sm">Contact Me</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="ambient-glow glow-cyan" style="top: 10%; left: -5%;"></div>
+    <div class="ambient-glow glow-indigo" style="top: 40%; right: -5%;"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content reveal-element active" data-reveal="left">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span> Available for AI / ML & Software Engineering Roles
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="text-gradient">Akash Mandal</span>
+        </h1>
+        <div class="hero-typing" id="typewriter-text"></div>
+        <p class="hero-desc">
+          Results-driven B.Tech CSE (AI & DS) student specializing in Machine Learning workflows, Computer Vision systems, and Data Analytics. Hands-on experience in LLM post-training workflows at Ethara.AI and published researcher in JETIR (2025).
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> View My Work
+          </a>
+          <a href="#publications" class="btn btn-outline">
+            <i class="fas fa-book-open"></i> Read JETIR Paper
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-envelope"></i> Get In Touch
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <span style="color: var(--color-text-dim); font-size: 0.85rem; font-family: var(--font-mono); letter-spacing: 0.05em;">CONNECT:</span>
+          <a href="https://github.com/Akashmandal08" target="_blank" rel="noopener noreferrer" class="hero-social-link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/akash-mandal" target="_blank" rel="noopener noreferrer" class="hero-social-link" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:akashmandal.9490@gmail.com" class="hero-social-link" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-element active" data-reveal="scale">
+        <!-- Glowing Cyber Profile Avatar -->
+        <div class="hero-avatar-wrapper">
+          <div class="avatar-glow-ring"></div>
+          <div class="avatar-card glass-card">
+            <img src="assets/images/profile_cyber.png" alt="Akash Mandal - AI & Data Science Engineer" class="profile-avatar-img">
+          </div>
+        </div>
+
+        <!-- Hero Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="1">0</div>
+            <div class="stat-label">JETIR Research Paper</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="4">0</div>
+            <div class="stat-label">IBM Certifications</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="8.03" data-float="true">0.00</div>
+            <div class="stat-label">B.Tech CGPA</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="4">0</div>
+            <div class="stat-label">Featured Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <div class="ambient-glow glow-purple" style="bottom: 10%; right: 10%;"></div>
+
+    <div class="container">
+      <div class="section-tag reveal-element" data-reveal="up">
+        <i class="fas fa-user-circle"></i> Background & Education
+      </div>
+      <h2 class="section-title reveal-element" data-reveal="up">Driven by Innovation in <span class="text-gradient">AI & Data Science</span></h2>
+      <p class="section-subtitle reveal-element" data-reveal="up">Combining theoretical computer science fundamentals with real-world engineering to build intelligent, scalable solutions.</p>
+
+      <div class="grid-2">
+        <div class="glass-card reveal-element" data-reveal="left" style="padding: 38px;">
+          <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-graduation-cap" style="color: var(--color-primary);"></i> Education Journey
+          </h3>
+          
+          <div style="margin-bottom: 26px; padding-left: 14px; border-left: 2px solid var(--color-primary);">
+            <div style="font-family: var(--font-mono); color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 4px;">2022 — PRESENT</div>
+            <div style="font-size: 1.15rem; font-weight: 700; color: #fff; line-height: 1.3;">B.Tech Computer Science Engineering (AI & Data Science)</div>
+            <div style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 4px;">Sanjivani University | Kopargaon, Maharashtra</div>
+            <div style="margin-top: 8px;"><span class="tag-pill" style="color: var(--color-primary); border-color: rgba(6,182,212,0.4); background: rgba(6,182,212,0.1);">CGPA: 8.03 / 10.0</span></div>
+          </div>
+
+          <div style="margin-bottom: 24px; padding-left: 14px; border-left: 2px solid var(--color-secondary);">
+            <div style="font-family: var(--font-mono); color: var(--color-text-dim); font-size: 0.85rem; margin-bottom: 4px;">2022 — 2024</div>
+            <div style="font-size: 1.05rem; font-weight: 600; color: var(--color-text-main);">Intermediate (HSC)</div>
+            <div style="color: var(--color-text-muted); font-size: 0.9rem;">Sai Nirman Junior College | Shirdi, Maharashtra</div>
+          </div>
+
+          <div style="padding-left: 14px; border-left: 2px solid var(--color-text-dim);">
+            <div style="font-family: var(--font-mono); color: var(--color-text-dim); font-size: 0.85rem; margin-bottom: 4px;">2012 — 2022</div>
+            <div style="font-size: 1.05rem; font-weight: 600; color: var(--color-text-main);">Secondary School (SSC)</div>
+            <div style="color: var(--color-text-muted); font-size: 0.9rem;">St. John's English Medium School | Rahata, Maharashtra</div>
+          </div>
+        </div>
+
+        <div class="glass-card reveal-element" data-reveal="right" style="padding: 38px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+              <i class="fas fa-bullseye" style="color: var(--color-secondary);"></i> Professional Summary
+            </h3>
+            <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 24px; font-size: 1.02rem;">
+              I specialize in bridging the gap between raw data and actionable AI intelligence. From developing end-to-end Machine Learning pipelines like <strong style="color: #fff;">PredictiX</strong> to fine-tuning datasets for LLM post-training workflows at <strong style="color: #fff;">Ethara AI</strong>, I aim to create technology that makes a tangible impact.
+            </p>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.03); border-radius: 14px; padding: 22px; border: 1px solid var(--color-border);">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; font-family: var(--font-mono);">Core Focus Areas:</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <span class="tag-pill"><i class="fas fa-brain" style="margin-right: 6px; color: var(--color-primary);"></i> LLM Post-Training</span>
+              <span class="tag-pill"><i class="fas fa-chart-line" style="margin-right: 6px; color: var(--color-secondary);"></i> Supervised Machine Learning</span>
+              <span class="tag-pill"><i class="fas fa-eye" style="margin-right: 6px; color: var(--color-accent);"></i> Computer Vision (OpenCV & MediaPipe)</span>
+              <span class="tag-pill"><i class="fas fa-chart-bar" style="margin-right: 6px; color: var(--color-pink);"></i> Tableau Data Visualization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Timeline Section -->
+  <section id="experience">
+    <div class="ambient-glow glow-cyan" style="top: 20%; left: 10%;"></div>
+
+    <div class="container">
+      <div class="section-tag reveal-element" data-reveal="up">
+        <i class="fas fa-briefcase"></i> Work History
+      </div>
+      <h2 class="section-title reveal-element" data-reveal="up">Industry <span class="text-gradient">Experience</span></h2>
+      <p class="section-subtitle reveal-element" data-reveal="up">Real-world AI engineering and data infrastructure contributions.</p>
+
+      <div class="timeline">
+        <div class="timeline-item reveal-element" data-reveal="up">
+          <div class="timeline-icon">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-date">FEB 5, 2026 — MAY 5, 2026</div>
+            <h3 class="timeline-role">LLM Post Training Intern</h3>
+            <div class="timeline-company">Ethara AI | Gurugram, Haryana</div>
+
+            <ul class="timeline-bullets">
+              <li>Executed comprehensive data preparation, cleaning, and evaluation tasks for AI and data projects supporting Large Language Model (LLM) post-training workflows.</li>
+              <li>Utilized the <strong style="color: #fff;">Multimango data annotation platform</strong> to facilitate high-precision data processing, quality assurance, and model evaluation benchmarks.</li>
+              <li>Collaborated with senior AI engineers to refine data pipelines and maintain high standards of dataset curation for model alignment and fine-tuning.</li>
+            </ul>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tag-pill">LLM Post-Training</span>
+              <span class="tag-pill">Multimango Platform</span>
+              <span class="tag-pill">Data Annotation</span>
+              <span class="tag-pill">Model Evaluation</span>
+              <span class="tag-pill">Python Data Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Published Research Section -->
+  <section id="publications">
+    <div class="ambient-glow glow-pink" style="top: 30%; right: 5%;"></div>
+
+    <div class="container">
+      <div class="section-tag reveal-element" data-reveal="up">
+        <i class="fas fa-newspaper"></i> Academic Research
+      </div>
+      <h2 class="section-title reveal-element" data-reveal="up">Published <span class="text-gradient">Research Paper</span></h2>
+      <p class="section-subtitle reveal-element" data-reveal="up">Peer-reviewed contribution to healthcare AI and supervised machine learning.</p>
+
+      <div class="pub-featured-card reveal-element" data-reveal="scale">
+        <div class="pub-badge">
+          <i class="fas fa-award"></i> JETIR PUBLICATION (Volume 12, Issue 9, Sept 2025)
+        </div>
+        <h3 class="pub-title">
+          "PredictiX: A Practical Framework for Multi-Disease Prediction using Supervised Machine Learning"
+        </h3>
+        <div class="pub-journal">
+          <i class="fas fa-book-open"></i> Journal of Emerging Technologies and Innovative Research (JETIR) | Paper ID: JETIR2509375
+        </div>
+
+        <p class="pub-abstract">
+          <strong style="color: #fff;">Abstract & Impact:</strong> This research paper introduces <em>PredictiX</em>, an end-to-end practical framework designed for multi-disease risk assessment using supervised machine learning algorithms. The study focuses on accessible, real-time healthcare diagnostic solutions by structuring machine learning pipelines that combine data cleaning, feature preprocessing, model training, and accessible web interface deployment.
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+          <a href="http://www.jetir.org/view?paper=JETIR2509375" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fas fa-external-link-alt"></i> Access Paper on JETIR.org
+          </a>
+          <button id="copy-citation-btn" class="btn btn-outline">
+            <i class="fas fa-copy"></i> Copy Citation
+          </button>
+          <span style="color: var(--color-text-dim); font-size: 0.9rem; font-family: var(--font-mono);">
+            Role: Lead Research Author
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Showcase Section -->
+  <section id="projects">
+    <div class="ambient-glow glow-indigo" style="top: 15%; left: 5%;"></div>
+
+    <div class="container">
+      <div class="section-tag reveal-element" data-reveal="up">
+        <i class="fas fa-code-branch"></i> Showcase
+      </div>
+      <h2 class="section-title reveal-element" data-reveal="up">Featured <span class="text-gradient">Projects</span></h2>
+      <p class="section-subtitle reveal-element" data-reveal="up">A collection of AI systems, web applications, and analytics dashboards.</p>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-container reveal-element" data-reveal="up">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ai-ml">AI & Machine Learning</button>
+        <button class="filter-btn" data-filter="cv">Computer Vision</button>
+        <button class="filter-btn" data-filter="software">Software Engineering</button>
+        <button class="filter-btn" data-filter="viz">Data Analytics</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid-2">
+        
+        <!-- Project 1: PredictiX -->
+        <div class="project-item reveal-element" data-reveal="up" data-category="ai-ml">
+          <div class="glass-card project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/predictix_preview.png" alt="PredictiX Web App Preview" class="project-img">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">PredictiX – Multi-Disease Prediction Web App</h3>
+              <p class="project-desc">
+                Designed and implemented an integrated Machine Learning pipeline featuring automated data cleaning, feature engineering, model training, and real-time disease prediction capabilities. Served as the practical foundation for the published JETIR research paper.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Scikit-learn</span>
+                <span class="tag-pill">Pandas</span>
+                <span class="tag-pill">Supervised ML</span>
+              </div>
+              <div class="project-links">
+                <a href="http://www.jetir.org/view?paper=JETIR2509375" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fas fa-paperclip"></i> Research Paper
+                </a>
+                <a href="https://github.com/Akashmandal08" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fab fa-github"></i> Repository
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: AI Sign Language Interpreter -->
+        <div class="project-item reveal-element" data-reveal="up" data-category="cv">
+          <div class="glass-card project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/sign_language_preview.png" alt="AI Sign Language Interpreter Preview" class="project-img">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">AI Sign Language Interpreter</h3>
+              <p class="project-desc">
+                Developed an AI-driven vision system capable of real-time sign language gesture detection and landmark tracking using OpenCV and MediaPipe. Implemented sign-to-text functionality to assist seamless communication accessibility.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">OpenCV</span>
+                <span class="tag-pill">MediaPipe</span>
+                <span class="tag-pill">Hand Tracking</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Akashmandal08" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Professional Inventory Management System -->
+        <div class="project-item reveal-element" data-reveal="up" data-category="software">
+          <div class="glass-card project-card">
+            <div class="project-content">
+              <h3 class="project-title">Professional Inventory Management System</h3>
+              <p class="project-desc">
+                Engineered an enterprise-ready inventory management system in Java leveraging Object-Oriented Programming (OOP) principles. Includes dynamic stock updates, detailed product cataloging, transaction logs, and workflow management.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill">Java</span>
+                <span class="tag-pill">OOP</span>
+                <span class="tag-pill">Data Structures</span>
+                <span class="tag-pill">Desktop App</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Akashmandal08" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Consumer Complaint Dashboard -->
+        <div class="project-item reveal-element" data-reveal="up" data-category="viz">
+          <div class="glass-card project-card">
+            <div class="project-content">
+              <h3 class="project-title">Consumer Complaint Dashboard</h3>
+              <p class="project-desc">
+                Created an interactive analytics dashboard in Tableau to analyze consumer complaints, identify operational bottlenecks, and display actionable KPIs through customizable multi-parameter filtering and drill-down charts.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill">Tableau</span>
+                <span class="tag-pill">Data Visualization</span>
+                <span class="tag-pill">Business Intelligence</span>
+                <span class="tag-pill">Analytics</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Akashmandal08" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fas fa-chart-pie"></i> Explore Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- IBM Certifications Section -->
+  <section id="certifications">
+    <div class="ambient-glow glow-cyan" style="top: 25%; right: 10%;"></div>
+
+    <div class="container">
+      <div class="section-tag reveal-element" data-reveal="up">
+        <i class="fas fa-certificate"></i> Certifications
+      </div>
+      <h2 class="section-title reveal-element" data-reveal="up">IBM Career <span class="text-gradient">Education Program</span></h2>
+      <p class="section-subtitle reveal-element" data-reveal="up">Verified professional skill credentials awarded by IBM.</p>
+
+      <div class="grid-4">
+        <!-- Cert 1: Business Intelligence -->
+        <div class="cert-card glass-card reveal-element" data-reveal="up">
+          <div class="cert-header">
+            <div class="cert-badge-icon">IBM</div>
+            <div>
+              <div class="cert-issuer">IBM Career Education</div>
+              <div class="cert-title">Business Intelligence</div>
+            </div>
+          </div>
+          <div class="cert-body">
+            Mastered Enterprise Analytics, KPI Dashboarding, Decision Support Systems, and Data-Driven Strategy Formulation.
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="https://courses.ibmcep.cognitiveclass.ai/certificates/e96cde613093436c8d3c5ccd21d47ffb" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex-grow: 1;">
+              <i class="fas fa-external-link-alt"></i> Verify
+            </a>
+            <button class="btn btn-outline btn-sm view-cert-btn" data-cert="bi" title="View Info">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 2: DevOps Agile -->
+        <div class="cert-card glass-card reveal-element" data-reveal="up">
+          <div class="cert-header">
+            <div class="cert-badge-icon" style="background: linear-gradient(135deg, #0043ce, #001141);">IBM</div>
+            <div>
+              <div class="cert-issuer">IBM Career Education</div>
+              <div class="cert-title">DevOps Agile & Design Thinking</div>
+            </div>
+          </div>
+          <div class="cert-body">
+            Covered Agile Scrum methods, User Empathy Mapping, CI/CD automated deployment concepts, and iterative prototyping.
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="https://courses.ibmcep.cognitiveclass.ai/certificates/52082d9d0cc64db7b8889d3375a0c887" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex-grow: 1;">
+              <i class="fas fa-external-link-alt"></i> Verify
+            </a>
+            <button class="btn btn-outline btn-sm view-cert-btn" data-cert="devops" title="View Info">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 3: Data Visualisation -->
+        <div class="cert-card glass-card reveal-element" data-reveal="up">
+          <div class="cert-header">
+            <div class="cert-badge-icon" style="background: linear-gradient(135deg, #127762, #00362c);">IBM</div>
+            <div>
+              <div class="cert-issuer">IBM Career Education</div>
+              <div class="cert-title">Data Visualisation</div>
+            </div>
+          </div>
+          <div class="cert-body">
+            Gained expertise in transformational data storytelling, visual encoding, interactive charting frameworks, and insight delivery.
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="https://courses.ibmcep.cognitiveclass.ai/certificates/ce048afb367a4a21b90714b8a3bed0e1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex-grow: 1;">
+              <i class="fas fa-external-link-alt"></i> Verify
+            </a>
+            <button class="btn btn-outline btn-sm view-cert-btn" data-cert="viz" title="View Info">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 4: Python -->
+        <div class="cert-card glass-card reveal-element" data-reveal="up">
+          <div class="cert-header">
+            <div class="cert-badge-icon" style="background: linear-gradient(135deg, #8a3ffc, #3c117b);">IBM</div>
+            <div>
+              <div class="cert-issuer">IBM Career Education</div>
+              <div class="cert-title">Introduction to Python</div>
+            </div>
+          </div>
+          <div class="cert-body">
+            Acquired core proficiency in Python syntax, Object-Oriented Programming, file I/O, data structures, and NumPy/Pandas setup.
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="https://courses.ibmcep.cognitiveclass.ai/certificates/bfbb8ea9bf7e49f4876486991931ad20" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex-grow: 1;">
+              <i class="fas fa-external-link-alt"></i> Verify
+            </a>
+            <button class="btn btn-outline btn-sm view-cert-btn" data-cert="python" title="View Info">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills">
+    <div class="ambient-glow glow-purple" style="top: 20%; left: 8%;"></div>
+
+    <div class="container">
+      <div class="section-tag reveal-element" data-reveal="up">
+        <i class="fas fa-tools"></i> Toolkit
+      </div>
+      <h2 class="section-title reveal-element" data-reveal="up">Technical <span class="text-gradient">Skills & Expertise</span></h2>
+      <p class="section-subtitle reveal-element" data-reveal="up">Technologies and methodologies I use to build intelligent software.</p>
+
+      <div class="grid-3">
+        <!-- Category 1 -->
+        <div class="glass-card skill-category-card reveal-element" data-reveal="up">
+          <h3 class="skill-category-title">
+            <i class="fas fa-code"></i> Programming Languages
+          </h3>
+          <div class="skill-tags-group">
+            <span class="skill-badge"><i class="fab fa-python" style="color: #3776ab;"></i> Python</span>
+            <span class="skill-badge"><i class="fab fa-java" style="color: #f89820;"></i> Java</span>
+            <span class="skill-badge"><i class="fas fa-terminal" style="color: #00599c;"></i> C / C++ (Basics)</span>
+            <span class="skill-badge"><i class="fas fa-database" style="color: #00758f;"></i> SQL</span>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="glass-card skill-category-card reveal-element" data-reveal="up">
+          <h3 class="skill-category-title">
+            <i class="fas fa-brain"></i> Data Science & ML
+          </h3>
+          <div class="skill-tags-group">
+            <span class="skill-badge"><i class="fas fa-chart-line" style="color: var(--color-primary);"></i> Scikit-learn</span>
+            <span class="skill-badge"><i class="fas fa-table" style="color: var(--color-secondary);"></i> Pandas</span>
+            <span class="skill-badge"><i class="fas fa-calculator" style="color: var(--color-accent);"></i> NumPy</span>
+            <span class="skill-badge"><i class="fas fa-filter" style="color: var(--color-pink);"></i> Preprocessing</span>
+            <span class="skill-badge"><i class="fas fa-network-wired"></i> Supervised ML</span>
+            <span class="skill-badge"><i class="fas fa-robot"></i> LLM Workflows</span>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="glass-card skill-category-card reveal-element" data-reveal="up">
+          <h3 class="skill-category-title">
+            <i class="fas fa-eye"></i> Computer Vision
+          </h3>
+          <div class="skill-tags-group">
+            <span class="skill-badge"><i class="fas fa-camera" style="color: var(--color-primary);"></i> OpenCV</span>
+            <span class="skill-badge"><i class="fas fa-hand-paper" style="color: var(--color-pink);"></i> MediaPipe</span>
+            <span class="skill-badge"><i class="fas fa-video"></i> Real-time Gesture Tracking</span>
+          </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="glass-card skill-category-card reveal-element" data-reveal="up">
+          <h3 class="skill-category-title">
+            <i class="fas fa-laptop-code"></i> Tools & Platforms
+          </h3>
+          <div class="skill-tags-group">
+            <span class="skill-badge"><i class="fas fa-chart-bar" style="color: #e97627;"></i> Tableau</span>
+            <span class="skill-badge"><i class="fab fa-git-alt" style="color: #f05032;"></i> Git</span>
+            <span class="skill-badge"><i class="fab fa-github"></i> GitHub</span>
+            <span class="skill-badge"><i class="fas fa-book" style="color: #f37626;"></i> Jupyter</span>
+            <span class="skill-badge"><i class="fas fa-code" style="color: #007acc;"></i> VS Code</span>
+            <span class="skill-badge"><i class="fas fa-layer-group"></i> Multimango Platform</span>
+          </div>
+        </div>
+
+        <!-- Category 5 -->
+        <div class="glass-card skill-category-card reveal-element" data-reveal="up" style="grid-column: span 2;">
+          <h3 class="skill-category-title">
+            <i class="fas fa-cubes"></i> Core CS Concepts & Soft Skills
+          </h3>
+          <div class="skill-tags-group">
+            <span class="skill-badge"><i class="fas fa-cogs"></i> Object-Oriented Programming (OOP)</span>
+            <span class="skill-badge"><i class="fas fa-project-diagram"></i> Data Structures & Algorithms</span>
+            <span class="skill-badge"><i class="fas fa-lightbulb"></i> Problem Solving</span>
+            <span class="skill-badge"><i class="fas fa-users"></i> Teamwork & Collaboration</span>
+            <span class="skill-badge"><i class="fas fa-comments"></i> Technical Writing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Social Section -->
+  <section id="contact">
+    <div class="ambient-glow glow-pink" style="bottom: 10%; right: 10%;"></div>
+
+    <div class="container">
+      <div class="section-tag reveal-element" data-reveal="up">
+        <i class="fas fa-paper-plane"></i> Get In Touch
+      </div>
+      <h2 class="section-title reveal-element" data-reveal="up">Let's Connect & <span class="text-gradient">Collaborate</span></h2>
+      <p class="section-subtitle reveal-element" data-reveal="up">Have an opportunity, research inquiry, or project? Send me a message!</p>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="glass-card contact-info-card reveal-element" data-reveal="left">
+          <div>
+            <h3 style="font-size: 1.45rem; color: #fff; margin-bottom: 28px;">Contact Information</h3>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <div class="contact-detail-title">Email</div>
+                <a href="mailto:akashmandal.9490@gmail.com" class="contact-detail-value">akashmandal.9490@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <div class="contact-detail-title">Phone</div>
+                <a href="tel:+918668707228" class="contact-detail-value">+91 8668707228</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <div class="contact-detail-title">Location</div>
+                <div class="contact-detail-value">Shirdi, Maharashtra, India</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 24px; border-top: 1px solid var(--color-border);">
+            <div style="font-size: 0.85rem; color: var(--color-text-dim); margin-bottom: 14px; font-family: var(--font-mono);">SOCIAL PROFILES:</div>
+            <div style="display: flex; gap: 12px;">
+              <a href="https://github.com/Akashmandal08" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://linkedin.com/in/akash-mandal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass-card contact-form reveal-element" data-reveal="right">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="form-name" class="form-label">Your Name</label>
+              <input type="text" id="form-name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="form-label">Your Email</label>
+              <input type="email" id="form-email" class="form-control" placeholder="e.g. sarah@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message</label>
+              <textarea id="form-message" class="form-control" placeholder="Discuss a project, AI role, or collaboration..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Akash Mandal. Built with AntiGravity IDE and hosted on GitHub Pages.</p>
+      <p style="margin-top: 10px; font-size: 0.82rem; color: var(--color-text-dim);">
+        Published Researcher in JETIR | B.Tech CSE (AI & DS) | Ethara.AI LLM Intern
+      </p>
+    </div>
+  </footer>
+
+  <!-- Certificate Info Modal -->
+  <div class="toast-notification" id="info-modal" style="display: none; position: fixed; inset: 0; background: rgba(5, 8, 17, 0.88); z-index: 3000; align-items: center; justify-content: center; opacity: 1; transform: none;">
+    <div class="glass-card" style="max-width: 520px; width: 90%; padding: 38px; position: relative;">
+      <button id="modal-close" style="position: absolute; top: 18px; right: 18px; background: none; border: none; color: var(--color-text-muted); font-size: 1.3rem; cursor: pointer;">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 id="modal-title" style="font-size: 1.4rem; color: #fff; margin-bottom: 18px;"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Popup -->
+  <div class="toast-notification" id="toast">
+    <i class="fas fa-info-circle" style="color: var(--color-primary);"></i>
+    <span id="toast-msg">Notification message</span>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
