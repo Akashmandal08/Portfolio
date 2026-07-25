@@ -113,7 +113,7 @@ body {
 }
 
 section {
-  padding: 110px 0;
+  padding: clamp(60px, 8vw, 110px) 0;
   position: relative;
 }
 
@@ -136,10 +136,10 @@ section {
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
   margin-bottom: 18px;
 }
 
@@ -167,9 +167,9 @@ section {
 
 .section-subtitle {
   color: var(--color-text-muted);
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 2vw, 1.12rem);
   max-width: 700px;
-  margin-bottom: 54px;
+  margin-bottom: 48px;
   line-height: 1.7;
 }
 
@@ -295,6 +295,6 @@ section {
 }
 
 @media (max-width: 768px) {
-  section { padding: 75px 0; }
+  section { padding: 60px 0; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }
