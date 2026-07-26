@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounterAnimations();
   initScrollSpy();
   
-  // New Modern Interactive Features
+  // Modern Interactive UI Features
   initScrollProgress();
   initCustomCursor();
   init3DTilt();
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------------
-   1. Top Scroll Progress Bar
+   1. Top Scroll Reading Progress Bar
    -------------------------------------------------------------------------- */
 function initScrollProgress() {
   const progressBar = document.getElementById('scroll-progress');
@@ -51,15 +51,15 @@ function initCustomCursor() {
     dot.style.left = `${posX}px`;
     dot.style.top = `${posY}px`;
 
-    // Outline follows with slight delay
+    // Smooth spring animation for cursor outline
     outline.animate({
       left: `${posX}px`,
       top: `${posY}px`
-    }, { duration: 500, fill: 'forwards' });
+    }, { duration: 450, fill: 'forwards' });
   });
 
   // Scale cursor outline on hover over interactive elements
-  const hoverables = document.querySelectorAll('a, button, .glass-card, .filter-btn, input, textarea, .skill-badge');
+  const hoverables = document.querySelectorAll('a, button, .glass-card, .filter-btn, input, textarea, .skill-badge, .stat-card, .cert-card');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
@@ -70,7 +70,7 @@ function initCustomCursor() {
    3. Interactive 3D Card Tilt Effect
    -------------------------------------------------------------------------- */
 function init3DTilt() {
-  const tiltCards = document.querySelectorAll('.glass-card, .stat-card, .cert-card');
+  const tiltCards = document.querySelectorAll('.glass-card, .stat-card, .cert-card, .project-card');
 
   tiltCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -81,8 +81,8 @@ function init3DTilt() {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = (centerY - y) / 18;
-      const rotateY = (x - centerX) / 18;
+      const rotateX = (centerY - y) / 16;
+      const rotateY = (x - centerX) / 16;
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
     });
@@ -97,7 +97,7 @@ function init3DTilt() {
    4. Card Mouse Spotlight Radial Highlight
    -------------------------------------------------------------------------- */
 function initCardSpotlight() {
-  const cards = document.querySelectorAll('.glass-card, .stat-card, .cert-card, .pub-featured-card');
+  const cards = document.querySelectorAll('.glass-card, .stat-card, .cert-card, .pub-featured-card, .project-card');
 
   cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -122,13 +122,11 @@ function initScrollReveal() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Optionally unobserve after revealed
-        // observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
   });
 
   revealElements.forEach(el => observer.observe(el));
@@ -142,7 +140,7 @@ function initBackToTop() {
   if (!backToTopBtn) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 380) {
       backToTopBtn.classList.add('show');
     } else {
       backToTopBtn.classList.remove('show');
@@ -252,7 +250,7 @@ function initTypewriter() {
 
     if (!isDeleting && charIdx === currentPhrase.length) {
       isDeleting = true;
-      speed = 2200; // Pause at full word
+      speed = 2200; // Pause at full phrase
     } else if (isDeleting && charIdx === 0) {
       isDeleting = false;
       phraseIdx = (phraseIdx + 1) % phrases.length;
@@ -354,7 +352,7 @@ function initModalHandlers() {
           <a href="${data.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-bottom: 16px;">
             <i class="fas fa-external-link-alt"></i> Open Official IBM Certificate Page
           </a>
-          <div style="padding: 12px 16px; background: rgba(6, 182, 212, 0.08); border-radius: 8px; border: 1px solid rgba(6, 182, 212, 0.2); font-size: 0.85rem; color: var(--color-text-muted);">
+          <div style="padding: 12px 16px; background: rgba(6, 182, 212, 0.08); border-radius: 10px; border: 1px solid rgba(6, 182, 212, 0.25); font-size: 0.85rem; color: var(--color-text-muted);">
             <i class="fas fa-check-circle" style="color: var(--color-primary); margin-right: 8px;"></i> Official IBM Career Education Program Credential Verified.
           </div>
         `;
