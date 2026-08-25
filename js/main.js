@@ -42,6 +42,7 @@ function initScrollProgress() {
 function initCustomCursor() {
   const dot = document.getElementById('cursor-dot');
   const outline = document.getElementById('cursor-outline');
+  const badge = document.getElementById('cursor-badge');
   if (!dot || !outline) return;
 
   window.addEventListener('mousemove', (e) => {
@@ -51,18 +52,34 @@ function initCustomCursor() {
     dot.style.left = `${posX}px`;
     dot.style.top = `${posY}px`;
 
+    if (badge) {
+      badge.style.left = `${posX}px`;
+      badge.style.top = `${posY}px`;
+    }
+
     // Smooth spring animation for cursor outline
     outline.animate({
       left: `${posX}px`,
       top: `${posY}px`
-    }, { duration: 450, fill: 'forwards' });
+    }, { duration: 420, fill: 'forwards' });
   });
 
-  // Scale cursor outline on hover over interactive elements
-  const hoverables = document.querySelectorAll('a, button, .glass-card, .filter-btn, input, textarea, .skill-badge, .stat-card, .cert-card');
+  // Hover over general interactive elements for Spider-Sense spikes & ripple
+  const hoverables = document.querySelectorAll('a, button, .filter-btn, .nav-link, input, textarea, .stat-card, .cert-card, .skill-badge, .hero-social-link, .tag-pill');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+
+  // Hover over project cards for SPIDER-SENSE ACTIVATED badge & glow
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      document.body.classList.add('cursor-hover', 'cursor-project');
+    });
+    card.addEventListener('mouseleave', () => {
+      document.body.classList.remove('cursor-hover', 'cursor-project');
+    });
   });
 }
 
