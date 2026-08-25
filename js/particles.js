@@ -12,10 +12,10 @@
   const mouse = { x: null, y: null, radius: 200 };
 
   const colorPalettes = [
-    'rgba(6, 182, 212, ',   /* Electric Cyan */
-    'rgba(99, 102, 241, ',  /* Neon Indigo */
-    'rgba(139, 92, 246, ',  /* Cyber Violet */
-    'rgba(236, 72, 153, '   /* Magenta Pink */
+    'rgba(255, 15, 57, ',   /* Vivid Spider Crimson Red */
+    'rgba(214, 0, 28, ',   /* Deep Spider Red */
+    'rgba(255, 51, 85, ',   /* Bright Red Highlight */
+    'rgba(180, 0, 25, '    /* Dark Crimson */
   ];
 
   function resize() {
@@ -106,8 +106,8 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < maxDist) {
-          const opacity = (1 - dist / maxDist) * 0.28;
-          ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
+          const opacity = (1 - dist / maxDist) * 0.32;
+          ctx.strokeStyle = `rgba(255, 15, 57, ${opacity})`;
           ctx.lineWidth = 0.85;
           ctx.beginPath();
           ctx.moveTo(particles[a].x, particles[a].y);
