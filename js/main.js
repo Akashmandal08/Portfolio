@@ -416,7 +416,11 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  const submitBtn = document.getElementById('contact-submit-btn') || form.querySelector('button[type="submit"]');
+  const submitIcon = document.getElementById('contact-submit-icon') || (submitBtn ? submitBtn.querySelector('i') : null);
+  const submitText = document.getElementById('contact-submit-text') || (submitBtn ? submitBtn.querySelector('span') : null);
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = document.getElementById('form-name').value.trim();
@@ -428,14 +432,49 @@ function initContactForm() {
       return;
     }
 
-    const mailtoUrl = `mailto:akashmandal.9490@gmail.com?subject=Portfolio Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nReply to: ' + email)}`;
-    
-    showToast('Thank you! Opening your email client...', 'success');
-    
-    setTimeout(() => {
+    // Set Loading State
+    if (submitBtn) submitBtn.disabled = true;
+    if (submitIcon) submitIcon.className = 'fas fa-spinner fa-spin';
+    if (submitText) submitText.textContent = 'Sending...';
+
+    try {
+      // Send form submission via FormSubmit AJAX service directly to Akash's inbox
+      const response = await fetch('https://formsubmit.co/ajax/akashmandal.9490@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          _subject: `New Portfolio Contact Message from ${name}`,
+          _captcha: 'false'
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok && (data.success === 'true' || data.success === true)) {
+        showToast('Message sent successfully! Akash will get back to you soon.', 'success');
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Form submission failed');
+      }
+    } catch (err) {
+      console.warn('FormSubmit AJAX failed or offline, falling back to direct mailto:', err);
+      // Synchronous mailto fallback if network fails or FormSubmit fails
+      const mailtoUrl = `mailto:akashmandal.9490@gmail.com?subject=${encodeURIComponent('Portfolio Message from ' + name)}&body=${encodeURIComponent(message + '\n\nReply to: ' + email)}`;
+      showToast('Opening your email application...', 'info');
       window.location.href = mailtoUrl;
       form.reset();
-    }, 1200);
+    } finally {
+      // Reset Button State
+      if (submitBtn) submitBtn.disabled = false;
+      if (submitIcon) submitIcon.className = 'fas fa-paper-plane';
+      if (submitText) submitText.textContent = 'Send Message';
+    }
   });
 }
 
@@ -443,6 +482,23 @@ function showToast(message, type = 'success') {
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toast-msg');
   if (!toast || !toastMsg) return;
+
+  const icon = toast.querySelector('i');
+  if (icon) {
+    if (type === 'error') {
+      icon.className = 'fas fa-exclamation-circle';
+      icon.style.color = '#ef4444';
+      toast.style.borderColor = '#ef4444';
+    } else if (type === 'info') {
+      icon.className = 'fas fa-info-circle';
+      icon.style.color = 'var(--color-primary)';
+      toast.style.borderColor = 'var(--color-primary)';
+    } else {
+      icon.className = 'fas fa-check-circle';
+      icon.style.color = '#10b981';
+      toast.style.borderColor = '#10b981';
+    }
+  }
 
   toastMsg.textContent = message;
   toast.classList.add('show');
