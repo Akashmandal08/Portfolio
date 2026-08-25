@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Dark Background Radial Gradient -->
+    <radialGradient id="bgGlow" cx="70%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#2a000a" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#120106" stop-opacity="0.98" />
+      <stop offset="100%" stop-color="#040105" stop-opacity="1" />
+    </radialGradient>
+
+    <!-- Red Web Radial Pattern Glow -->
+    <radialGradient id="centerWebGlow" cx="70%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#ff0f39" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#d6001c" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Red Glow Filter for Spider Symbol -->
+    <filter id="redGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="intenseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur1" />
+      <feGaussianBlur stdDeviation="5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base Dark Canvas -->
+  <rect width="1920" height="1080" fill="url(#bgGlow)" />
+  <rect width="1920" height="1080" fill="url(#centerWebGlow)" />
+
+  <!-- Geometric Spider Web Texture Overlay (Left Side & Full Canvas) -->
+  <g stroke="rgba(255, 15, 57, 0.14)" stroke-width="1.2" fill="none">
+    <!-- Web Radial Lines Left -->
+    <line x1="0" y1="0" x2="600" y2="600" />
+    <line x1="0" y1="300" x2="600" y2="600" />
+    <line x1="0" y1="600" x2="600" y2="600" />
+    <line x1="0" y1="900" x2="600" y2="600" />
+    <line x1="300" y1="0" x2="600" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    
+    <!-- Concentric Web Polygon Loops Left -->
+    <polygon points="100,100 100,200 200,300 300,300 300,200 200,100" />
+    <polygon points="180,180 180,320 320,450 450,450 450,320 320,180" />
+    <polygon points="260,260 260,420 420,580 580,580 580,420 420,260" />
+    <polygon points="50,400 150,550 300,700 450,700 450,550 300,400" />
+    <polygon points="80,600 200,800 400,950 600,950 600,800 400,600" />
+  </g>
+
+  <!-- Large Radiating Spider Web Grid behind Profile/Center -->
+  <g stroke="rgba(255, 15, 57, 0.22)" stroke-width="1.4" fill="none" filter="url(#redGlow)">
+    <!-- Radial Lines Center (1350, 420) -->
+    <line x1="1350" y1="420" x2="800" y2="0" />
+    <line x1="1350" y1="420" x2="1100" y2="0" />
+    <line x1="1350" y1="420" x2="1450" y2="0" />
+    <line x1="1350" y1="420" x2="1750" y2="0" />
+    <line x1="1350" y1="420" x2="1920" y2="100" />
+    <line x1="1350" y1="420" x2="1920" y2="350" />
+    <line x1="1350" y1="420" x2="1920" y2="600" />
+    <line x1="1350" y1="420" x2="1700" y2="900" />
+    <line x1="1350" y1="420" x2="1350" y2="900" />
+    <line x1="1350" y1="420" x2="980" y2="900" />
+    <line x1="1350" y1="420" x2="700" y2="650" />
+    <line x1="1350" y1="420" x2="700" y2="350" />
+
+    <!-- Web Rings -->
+    <path d="M 1150 420 A 200 200 0 0 1 1550 420 A 200 200 0 0 1 1150 420" stroke-dasharray="12 6" />
+    <path d="M 1000 420 A 350 350 0 0 1 1700 420 A 350 350 0 0 1 1000 420" stroke-dasharray="16 8" />
+    <path d="M 850 420 A 500 500 0 0 1 1850 420 A 500 500 0 0 1 850 420" stroke-dasharray="20 10" />
+    <path d="M 700 420 A 650 650 0 0 1 1920 420" stroke-dasharray="24 12" />
+  </g>
+
+  <!-- Night City Skyline Silhouette (Right Side & Center Backdrop) -->
+  <g fill="#070208" stroke="rgba(255, 15, 57, 0.25)" stroke-width="1">
+    <!-- Distant Layer Buildings -->
+    <path d="M 600 1080 L 600 750 L 650 750 L 650 720 L 720 720 L 720 800 L 780 800 L 780 680 L 840 680 L 840 1080 Z" opacity="0.6" />
+    <path d="M 840 1080 L 840 620 L 920 620 L 920 660 L 990 660 L 990 580 L 1060 580 L 1060 1080 Z" opacity="0.7" />
+    <path d="M 1060 1080 L 1060 640 L 1140 640 L 1140 550 L 1220 550 L 1220 700 L 1300 700 L 1300 1080 Z" opacity="0.8" />
+    <path d="M 1300 1080 L 1300 520 L 1380 520 L 1380 480 L 1460 480 L 1460 600 L 1540 600 L 1540 1080 Z" opacity="0.85" />
+    
+    <!-- Empire State Skyscraper Tower (Far Right) -->
+    <path d="M 1680 1080 L 1680 250 L 1710 250 L 1710 180 L 1735 180 L 1735 90 L 1740 40 L 1745 40 L 1745 90 L 1770 180 L 1770 250 L 1800 250 L 1800 1080 Z" fill="#0b030c" stroke="rgba(255, 15, 57, 0.5)" stroke-width="1.5" />
+    
+    <!-- Building Windows Detail -->
+    <g fill="rgba(255, 15, 57, 0.6)">
+      <rect x="1700" y="300" width="6" height="12" />
+      <rect x="1720" y="300" width="6" height="12" />
+      <rect x="1740" y="300" width="6" height="12" />
+      <rect x="1760" y="300" width="6" height="12" />
+      <rect x="1700" y="340" width="6" height="12" />
+      <rect x="1740" y="340" width="6" height="12" />
+      <rect x="1760" y="340" width="6" height="12" />
+      <rect x="1720" y="380" width="6" height="12" />
+      <rect x="1740" y="380" width="6" height="12" />
+      <rect x="1700" y="420" width="6" height="12" />
+      <rect x="1760" y="420" width="6" height="12" />
+    </g>
+
+    <!-- Glowing Red Spider Symbol Emblem on Skyscraper Tower -->
+    <g transform="translate(1740, 220) scale(1.6)" filter="url(#intenseGlow)">
+      <!-- Spider Body -->
+      <ellipse cx="0" cy="0" rx="7" ry="12" fill="#ff0f39" />
+      <circle cx="0" cy="-14" r="5" fill="#ff0f39" />
+      
+      <!-- Spider Legs Right -->
+      <path d="M 4 -8 C 15 -18, 25 -10, 22 2 M 5 -4 C 18 -10, 28 0, 24 14 M 5 2 C 18 2, 26 15, 20 25 M 4 7 C 14 12, 22 25, 15 32" stroke="#ff0f39" stroke-width="2.5" fill="none" />
+      
+      <!-- Spider Legs Left -->
+      <path d="M -4 -8 C -15 -18, -25 -10, -22 2 M -5 -4 C -18 -10, -28 0, -24 14 M -5 2 C -18 2, -26 15, -20 25 M -4 7 C -14 12, -22 25, -15 32" stroke="#ff0f39" stroke-width="2.5" fill="none" />
+    </g>
+  </g>
+
+  <!-- Silhouetted Spider-Man Swinging Pose on Web Lines (Far Left Side) -->
+  <g transform="translate(140, 180) scale(1.15)">
+    <!-- Swinging Web Line -->
+    <path d="M -100 -180 L 180 180 M 180 180 L 450 450" stroke="rgba(255, 255, 255, 0.9)" stroke-width="2.5" filter="url(#redGlow)" />
+    
+    <!-- Spider-Man Body Silhouette with Red Glow Highlights -->
+    <g filter="url(#redGlow)">
+      <!-- Torso & Suit Mask -->
+      <path d="M 175 140 C 160 120, 140 135, 145 160 C 150 180, 170 200, 185 210 C 200 200, 210 180, 205 160 C 200 135, 190 120, 175 140 Z" fill="#080206" stroke="#ff0f39" stroke-width="3" />
+      <!-- Head & Mask -->
+      <ellipse cx="155" cy="130" rx="14" ry="18" fill="#a80017" stroke="#ff0f39" stroke-width="2" />
+      <!-- White Mask Eyes -->
+      <path d="M 148 126 Q 155 132 160 125 Q 154 120 148 126 Z" fill="#ffffff" stroke="#000" stroke-width="1" />
+      
+      <!-- Arms Holding Web -->
+      <path d="M 155 140 L 130 90 L 150 60 L 180 180" stroke="#ff0f39" stroke-width="10" stroke-linecap="round" fill="none" />
+      <path d="M 185 145 L 210 100 L 180 180" stroke="#080206" stroke-width="8" stroke-linecap="round" fill="none" />
+      
+      <!-- Acrobat Swinging Legs -->
+      <path d="M 180 200 L 140 260 L 110 320" stroke="#080206" stroke-width="12" stroke-linecap="round" fill="none" />
+      <path d="M 180 200 L 140 260 L 110 320" stroke="#ff0f39" stroke-width="4" stroke-linecap="round" fill="none" />
+      
+      <path d="M 190 200 L 230 250 L 260 300" stroke="#a80017" stroke-width="11" stroke-linecap="round" fill="none" />
+    </g>
+  </g>
+</svg>

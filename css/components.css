@@ -306,16 +306,7 @@ body.cursor-hover #cursor-outline {
 }
 
 .hero-city-bg {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 48%;
-  height: 70%;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cpath d='M0 600 L0 500 L40 500 L40 450 L70 450 L70 520 L110 520 L110 400 L160 400 L160 350 L180 320 L200 350 L200 600 L240 600 L240 420 L290 420 L290 600 L340 600 L340 300 L350 200 L360 300 L410 300 L410 600 L460 600 L460 380 L520 380 L520 600 L580 600 L580 440 L640 440 L640 600 L800 600 Z' fill='rgba(14, 4, 10, 0.85)' stroke='rgba(255, 15, 57, 0.22)' stroke-width='1.2'/%3E%3Cpath d='M350 200 L350 260 M345 230 L355 230' stroke='rgba(255, 15, 57, 0.8)' stroke-width='2'/%3E%3C/svg%3E") no-repeat bottom right;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.7;
+  display: none;
 }
 
 .hero-badge {
