@@ -42,7 +42,6 @@ function initScrollProgress() {
 function initCustomCursor() {
   const dot = document.getElementById('cursor-dot');
   const outline = document.getElementById('cursor-outline');
-  const badge = document.getElementById('cursor-badge');
   if (!dot || !outline) return;
 
   window.addEventListener('mousemove', (e) => {
@@ -52,11 +51,6 @@ function initCustomCursor() {
     dot.style.left = `${posX}px`;
     dot.style.top = `${posY}px`;
 
-    if (badge) {
-      badge.style.left = `${posX}px`;
-      badge.style.top = `${posY}px`;
-    }
-
     // Smooth spring animation for cursor outline
     outline.animate({
       left: `${posX}px`,
@@ -65,21 +59,10 @@ function initCustomCursor() {
   });
 
   // Hover over general interactive elements for Spider-Sense spikes & ripple
-  const hoverables = document.querySelectorAll('a, button, .filter-btn, .nav-link, input, textarea, .stat-card, .cert-card, .skill-badge, .hero-social-link, .tag-pill');
+  const hoverables = document.querySelectorAll('a, button, .filter-btn, .nav-link, input, textarea, .stat-card, .cert-card, .skill-badge, .hero-social-link, .tag-pill, .project-card');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-
-  // Hover over project cards for SPIDER-SENSE ACTIVATED badge & glow
-  const projectCards = document.querySelectorAll('.project-card');
-  projectCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      document.body.classList.add('cursor-hover', 'cursor-project');
-    });
-    card.addEventListener('mouseleave', () => {
-      document.body.classList.remove('cursor-hover', 'cursor-project');
-    });
   });
 }
 
@@ -242,6 +225,7 @@ function initTypewriter() {
 
   const phrases = [
     'AI & Data Science Engineer',
+    'Retail Sales Forecasting Specialist',
     'LLM Post-Training Specialist',
     'Published Machine Learning Researcher',
     'Computer Vision Developer'
@@ -317,7 +301,7 @@ function initProjectFilters() {
 }
 
 /* --------------------------------------------------------------------------
-   11. Certificate Modals
+   11. Certificate & Document Modals
    -------------------------------------------------------------------------- */
 function initModalHandlers() {
   const modal = document.getElementById('info-modal');
@@ -328,6 +312,49 @@ function initModalHandlers() {
   const closeBtn = document.getElementById('modal-close');
 
   const certData = {
+    'vaidsys-cert': {
+      title: 'Vaidsys Technologies — Certificate of Internship',
+      issuer: 'Vaidsys Technologies',
+      image: 'assets/images/vaidsys_certificate.png',
+      pdf: 'assets/docs/vaidsys_internship_certificate.pdf',
+      meta: [
+        { label: 'Candidate', val: 'AKASH SUDHANGSHU MANDAL' },
+        { label: 'Role', val: 'Data Science Intern' },
+        { label: 'Certificate ID', val: 'VST0826652' },
+        { label: 'Issue Date', val: '24-09-2026' },
+        { label: 'Tenure', val: '24th Aug 2026 — 23rd Sept 2026' },
+        { label: 'Verification', val: 'info@vaidsys.com' }
+      ],
+      details: 'Awarded for completing Data Science Internship focusing on Retail Sales Forecasting & Inventory Optimization. Engineered time-series ML models achieving >=90% forecast accuracy and optimizing stock levels.'
+    },
+    'vaidsys-offer': {
+      title: 'Vaidsys Technologies — Internship Offer Letter',
+      issuer: 'Vaidsys Technologies',
+      image: 'assets/images/vaidsys_offer_letter.png',
+      pdf: 'assets/docs/vaidsys_offer_letter.pdf',
+      meta: [
+        { label: 'Intern ID', val: '5256' },
+        { label: 'Position', val: 'Data Science Intern' },
+        { label: 'Offer Date', val: '24/08/2026' },
+        { label: 'Duration', val: '24th Aug 2026 to 23rd Sept 2026' },
+        { label: 'Authorized Signatory', val: 'HR Executive, Vaidsys Tech' }
+      ],
+      details: 'Official letter of appointment as Data Science Intern at Vaidsys Technologies for retail sales analytics, feature engineering, and predictive time-series modeling.'
+    },
+    'ethara-letter': {
+      title: 'Ethara AI — Internship Completion Letter',
+      issuer: 'Ethara AI (Bridging the Gap to AGI)',
+      image: 'assets/images/ethara_completion_letter.png',
+      pdf: 'assets/docs/ethara_completion_letter.pdf',
+      meta: [
+        { label: 'Candidate', val: 'Akash Sudhangshu Mandal' },
+        { label: 'Position', val: 'LLM Post Training Intern' },
+        { label: 'Period', val: '24/02/2026 to 12/05/2026' },
+        { label: 'Location', val: 'Gurugram, Haryana' },
+        { label: 'Authorized Signatory', val: 'Co-Founder & CEO, Ethara AI' }
+      ],
+      details: 'Official completion certificate for executing data preparation, Multimango platform annotation, quality assurance benchmarks, and LLM post-training workflows.'
+    },
     'bi': {
       title: 'IBM Business Intelligence Certificate',
       issuer: 'IBM Career Education Program',
@@ -354,28 +381,75 @@ function initModalHandlers() {
     }
   };
 
-  document.querySelectorAll('.view-cert-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const certKey = btn.getAttribute('data-cert');
-      const data = certData[certKey];
-      if (data) {
-        modalTitle.textContent = data.title;
-        modalBody.innerHTML = `
-          <div style="margin-bottom: 16px;">
-            <span style="color: var(--color-primary); font-family: var(--font-mono); font-size: 0.9rem;">ISSUER: ${data.issuer}</span>
-          </div>
-          <p style="color: var(--color-text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 24px;">${data.details}</p>
-          <a href="${data.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-bottom: 16px;">
-            <i class="fas fa-external-link-alt"></i> Open Official IBM Certificate Page
-          </a>
-          <div style="padding: 12px 16px; background: rgba(6, 182, 212, 0.08); border-radius: 10px; border: 1px solid rgba(6, 182, 212, 0.25); font-size: 0.85rem; color: var(--color-text-muted);">
-            <i class="fas fa-check-circle" style="color: var(--color-primary); margin-right: 8px;"></i> Official IBM Career Education Program Credential Verified.
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.view-cert-btn');
+    if (!btn) return;
+    e.preventDefault();
+
+    const certKey = btn.getAttribute('data-cert');
+    const data = certData[certKey];
+    if (!data) return;
+
+    modalTitle.innerHTML = `<i class="fas fa-spider" style="color: var(--color-primary); margin-right: 8px;"></i> ${data.title}`;
+
+    if (data.image) {
+      let metaHtml = '';
+      if (data.meta && data.meta.length) {
+        metaHtml = `
+          <div class="modal-meta-grid">
+            ${data.meta.map(m => `
+              <div class="modal-meta-pill">
+                <span>${m.label}</span>
+                <strong>${m.val}</strong>
+              </div>
+            `).join('')}
           </div>
         `;
-        modal.style.display = 'flex';
       }
-    });
+
+      modalBody.innerHTML = `
+        <div style="margin-bottom: 12px;">
+          <span style="color: var(--color-primary); font-family: var(--font-mono); font-size: 0.88rem; font-weight: 600;">
+            ISSUING ORGANIZATION: ${data.issuer}
+          </span>
+        </div>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+          ${data.details}
+        </p>
+        ${metaHtml}
+        <div class="modal-doc-preview">
+          <a href="${data.image}" target="_blank" title="Click to view full image in high resolution">
+            <img src="${data.image}" alt="${data.title}">
+          </a>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;">
+          <a href="${data.pdf}" download class="btn btn-primary btn-sm" style="flex: 1; text-align: center;">
+            <i class="fas fa-file-download"></i> Download Official Document (PDF)
+          </a>
+          <a href="${data.image}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <i class="fas fa-external-link-alt"></i> Open Full Image
+          </a>
+        </div>
+        <div style="margin-top: 14px; padding: 10px 14px; background: rgba(16, 185, 129, 0.08); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.25); font-size: 0.82rem; color: #a7f3d0;">
+          <i class="fas fa-check-circle" style="color: #10b981; margin-right: 6px;"></i> Verified official credential. Issued directly by ${data.issuer}.
+        </div>
+      `;
+    } else {
+      modalBody.innerHTML = `
+        <div style="margin-bottom: 16px;">
+          <span style="color: var(--color-primary); font-family: var(--font-mono); font-size: 0.9rem;">ISSUER: ${data.issuer}</span>
+        </div>
+        <p style="color: var(--color-text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 24px;">${data.details}</p>
+        <a href="${data.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-bottom: 16px;">
+          <i class="fas fa-external-link-alt"></i> Open Official IBM Certificate Page
+        </a>
+        <div style="padding: 12px 16px; background: rgba(6, 182, 212, 0.08); border-radius: 10px; border: 1px solid rgba(6, 182, 212, 0.25); font-size: 0.85rem; color: var(--color-text-muted);">
+          <i class="fas fa-check-circle" style="color: var(--color-primary); margin-right: 8px;"></i> Official IBM Career Education Program Credential Verified.
+        </div>
+      `;
+    }
+
+    modal.style.display = 'flex';
   });
 
   if (closeBtn) {
@@ -389,6 +463,12 @@ function initModalHandlers() {
       modal.style.display = 'none';
     }
   });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      modal.style.display = 'none';
+    }
+  });
 }
 
 /* --------------------------------------------------------------------------
@@ -398,32 +478,45 @@ function initCounterAnimations() {
   const counters = document.querySelectorAll('.stat-number');
   if (!counters.length) return;
 
+  const animateCounter = (counter) => {
+    if (counter.dataset.animated) return;
+    counter.dataset.animated = 'true';
+
+    const target = parseFloat(counter.getAttribute('data-target'));
+    const isFloat = counter.getAttribute('data-float') === 'true';
+    let current = 0;
+    const increment = target / 40;
+
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        counter.textContent = isFloat ? current.toFixed(2) : Math.ceil(current);
+        setTimeout(updateCounter, 25);
+      } else {
+        counter.textContent = isFloat ? target.toFixed(2) : target;
+      }
+    };
+
+    updateCounter();
+  };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const counter = entry.target;
-        const target = parseFloat(counter.getAttribute('data-target'));
-        const isFloat = counter.getAttribute('data-float') === 'true';
-        let current = 0;
-        const increment = target / 40;
-
-        const updateCounter = () => {
-          current += increment;
-          if (current < target) {
-            counter.textContent = isFloat ? current.toFixed(2) : Math.ceil(current);
-            setTimeout(updateCounter, 30);
-          } else {
-            counter.textContent = isFloat ? target.toFixed(2) : target;
-          }
-        };
-
-        updateCounter();
-        observer.unobserve(counter);
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
 
-  counters.forEach(c => observer.observe(c));
+  counters.forEach(c => {
+    const rect = c.getBoundingClientRect();
+    if (rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0) {
+      animateCounter(c);
+    } else {
+      observer.observe(c);
+    }
+  });
 }
 
 /* --------------------------------------------------------------------------

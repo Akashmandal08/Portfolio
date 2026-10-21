@@ -114,25 +114,6 @@
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Spider-Sense Activated Cursor Badge */
-#cursor-badge {
-  padding: 5px 12px;
-  background: rgba(14, 3, 9, 0.95);
-  border: 1px solid var(--color-primary);
-  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
-  color: var(--color-primary);
-  font-family: var(--font-tech);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  box-shadow: 0 0 16px rgba(255, 15, 57, 0.6);
-  opacity: 0;
-  transform: translate(18px, 18px) scale(0.85);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
 /* Hover States */
 body.cursor-hover #cursor-outline {
   width: 48px;
@@ -157,12 +138,6 @@ body.cursor-hover .spider-web-ripple {
   0% { transform: scale(0.9); opacity: 0.8; }
   50% { opacity: 0.4; }
   100% { transform: scale(1.4); opacity: 0; }
-}
-
-/* Project Card Hover State */
-body.cursor-project #cursor-badge {
-  opacity: 1;
-  transform: translate(18px, 18px) scale(1);
 }
 
 .project-card {
@@ -886,6 +861,149 @@ body.cursor-project #cursor-badge {
   font-size: 0.85rem;
   color: var(--color-primary);
 }
+
+/* Enhanced Experience Project Card & Metrics */
+.experience-project-box {
+  background: rgba(255, 15, 57, 0.04);
+  border: 1px solid rgba(255, 15, 57, 0.22);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.experience-project-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+  box-shadow: 0 0 12px var(--color-primary-glow);
+}
+
+.exp-project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-tech);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.exp-project-summary {
+  color: var(--color-text-main);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.exp-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .exp-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.exp-metric-card {
+  background: rgba(8, 12, 22, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exp-metric-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 15, 57, 0.4);
+  box-shadow: 0 6px 18px rgba(255, 15, 57, 0.15);
+}
+
+.exp-metric-val {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.exp-metric-lbl {
+  font-size: 0.76rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+  font-family: var(--font-tech);
+  font-weight: 600;
+}
+
+.timeline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Certificate & Document Modal Viewer Styles */
+.modal-doc-preview {
+  margin: 18px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.modal-doc-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.modal-doc-preview:hover img {
+  transform: scale(1.02);
+}
+
+.modal-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.modal-meta-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.modal-meta-pill strong {
+  color: #fff;
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
 
 /* --------------------------------------------------------------------------
    6. Projects Filterable Showcase
